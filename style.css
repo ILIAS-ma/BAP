@@ -1,0 +1,479 @@
+:root {
+  --navbar-text-color: hsl(0, 0%, 85%);
+  --navbar-text-color-focus: white;
+  --navbar-height: 64px; /* Hauteur de la barre de navigation */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+ 
+}
+#navbar a{
+  color: rgba(246, 160, 0, 1);
+  
+}
+.container {
+  max-width: 1000px;
+  padding: 0 1.4rem;
+  margin: 0 auto;
+}
+
+#navbar {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.4rem;
+  background: rgba(33,53, 82, 1); /* Fond semi-transparent pour la barre de navigation */
+  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+  color: var(--navbar-text-color);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.navbar-logo {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: var(--navbar-text-color-focus); 
+  margin-right: 0.5em;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0 auto;
+
+}
+
+.navbar-link {
+  color: var(--navbar-text-color);
+  text-decoration: none;
+  padding: 0.4em 0.8em;
+  border-radius: 5px;
+}
+
+.navbar-link:is(:focus, :hover) {
+  color: var(--navbar-text-color-focus);
+}
+
+
+
+#navbar-toggle {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  display: none;
+}
+
+.icon-bar {
+  width: 25px;
+  height: 4px;
+  margin: 2px;
+  background-color: var(--navbar-text-color);
+}
+
+
+.image-container {
+  margin-top: var(--navbar-height); /* Positionne l'image sous la barre de navigation */
+  background-image: url('https://static.wixstatic.com/media/b86817_57301bf40cc143ab9d0e0b4bc42483c4~mv2_d_4961_3508_s_4_2.jpg/v1/fill/w_879,h_622,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Tests-bo%C3%AEte_Basket_Time.jpg'); /* Image de fond uniquement pour la section */
+  background-position: 100% center; 
+  margin-top: 100px;
+  opacity: 50;
+
+  background-repeat: no-repeat;
+  height: 500px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* Styles du texte dans l'image */
+.text-content {
+  color: rgb(0, 0, 0);
+  max-width: 600px;
+  margin-right: 600px;
+}
+
+.text-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: start;
+}
+
+.text-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: start;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.button-group button {
+ padding: 17px;
+ width: 200px;
+  background-color:rgba(51,92, 159, 1);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-left: 40px;
+}
+.button-group button  {
+  font-size: 17px;
+}
+
+.button-group button:hover {
+  background-color: #666;
+}
+.bleu{
+  width: 100%;
+  height: 300px;
+  background-color: blue;
+}
+h2{
+  margin-left: 100px;
+  font-size: 35px;
+text-align: center;
+padding-top: 100px;
+padding-bottom: 70px;
+}
+.pcase2{
+  width: 600px;
+  text-align: start;
+  margin-top: 70px;
+  margin-left: 100px;
+}
+.case2{
+  height: 350px;
+  margin-top: 50px;
+  width: 350px;
+  margin-left: 200px;
+  margin-bottom: 100px;
+  background-color: rgb(255, 0, 0);
+}
+.page2  {
+  display: flex;
+  margin-top: var(--navbar-height); /* Positionne la section sous la barre de navigation */
+
+  background-position: center; /* Centre l'image */
+  background-size: cover; /* Couvre toute la section */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  padding: 50px 0; /* Un peu d'espace autour du contenu */
+}
+
+.page3 {
+  background-color: #444;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; 
+  padding: 20px;
+}
+
+.cube3 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 200px;
+  width: 200px;
+  background-color: rgb(255, 0, 0);
+
+  margin-right: 20px; 
+  margin-left: 400px;
+}
+
+.content {
+  margin-top: 70px;
+  margin-bottom: 50px;
+  margin-left: 150px;
+  color: white; 
+}
+
+h3 {
+  margin: 0;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px; 
+}
+h4 {
+text-align: center;
+ 
+  font-size: 30px;
+}
+.vidéos{
+  
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 400px;
+
+  height: 300px;
+  background-color: #666;
+  width: 700px;
+}
+h5{
+  margin-left: 50px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+.p5{
+  margin-left: 50px;
+}
+.six {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+div.six{
+margin-top: 100px;
+}
+div.six p {
+  color: black;
+  width: 700px;
+}
+h6 {
+  font-size: 20px;
+  margin: 0 0 20px 0;
+  color: black;
+}
+
+.p6 {
+  margin: 0 0 20px 0;
+  text-align: start;
+}
+
+.b6 {
+  width: 200px;
+}
+
+.images {
+  display: flex;
+  gap: 20px; 
+  margin-left: 50px;
+  margin-right: 200px;
+}
+
+.crea1, .crea2 {
+  height: 300px;
+  margin-top: 40px;
+  width: 150px;
+  background-color: #666;
+}
+
+
+.sept {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: space-between; 
+  padding: 20px;
+}
+
+.img7 {
+  width: 400px;
+  margin-left: 150px;
+  height: 270px;
+ background-color: #666;
+  background-size: cover;
+  background-position: center;
+}
+
+.text-container {
+  margin-left: 20px;
+}
+
+.description7 {
+  font-size: 16px;
+  font-weight: bold;
+  width: 500px;
+  margin-right: 250px;
+}
+
+.titre7 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 250px;
+}
+
+.commentaire7 {
+  font-size: 14px;
+  margin-top: 10px;
+  width: 500px;
+  margin-right: 250px;
+}
+.acheter{
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.acheter1 , .acheter2{
+margin-bottom: 20px;
+}
+.acheter1{
+  font-size: 30px;
+}
+.acheterbtn{
+  color: rgb(255, 255, 255);
+  background-color: rgba(51, 92, 159, 1);
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 33px;
+  border: none;
+  width: 234px;
+  height: 48.17px;
+}
+.creatitre{
+  text-align: center;
+  font-size: 30px;
+}
+.créateur{
+  display: flex;
+  justify-content: wrap;
+  margin-left: 330px;
+}
+.casedroite , .casegauche{
+  margin: 50px;
+  border-radius: 15px;
+background-color: rgb(126, 126, 126);
+width: 333px;
+height: 496px
+}
+.gauche{
+  background-color: rgb(217, 217, 217, 1);
+  width: 186px;
+  height:65.03px;
+  margin-top: 400px;
+  padding-top: 20px;
+  text-align: center;
+  border-top-right-radius: 10px; 
+  border-bottom-right-radius: 10px;
+}
+.droite{
+margin-left: 147px;
+background-color: rgb(217, 217, 217, 1);
+  width: 186px;
+  height:65.03px;
+  margin-top: 400px;
+  padding-top: 20px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.alternating-section {
+  margin-top: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+  
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.row:nth-child(odd) {
+  flex-direction: row-reverse; 
+}
+
+.row:nth-child(even) {
+  flex-direction: row; 
+}
+.row img {
+  width: 418px;
+  height: 218px;
+  object-fit: cover;
+  margin: 0 20px;
+}
+
+.row .text {
+  flex: 1;
+  background-color: #656565;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.text p {
+  height: 200px;
+  padding-top: 30px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.fleche{
+  width: 200px;
+  border: 3px solid;
+margin-left: 470px;
+margin-bottom: 100px;
+margin-top: 100px;
+transform: rotate(20deg); 
+}
+.fleche2{
+  width: 200px;
+  border: 3px solid;
+margin-left: 470px;
+margin-bottom: 100px;
+margin-top: 100px;
+transform: rotate(-20deg); 
+}
+.titref{
+  text-align: center;
+  font-size: 30px;
+}
+
+
+
+
+@keyframes appear{
+from {
+opacity: 0;
+scale:0.4;
+ }
+to{
+  opacity: 1;
+  scale: 1;
+ }
+}
+.row{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
