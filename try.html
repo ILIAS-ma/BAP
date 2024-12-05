@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Animation</title>
+    <style>
+        body {
+            height: 200vh; /* Permet de scroller */
+            margin: 0;
+        }
+        .ball {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: fixed; /* Reste en vue */
+            top: 0;
+            left: 50%; /* Centré horizontalement */
+            transform: translateX(-50%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+    <script>
+        const ball = document.querySelector('.ball');
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY; // Distance scrollée en pixels
+            const maxScroll = document.body.scrollHeight - window.innerHeight; // Scroll max
+            const percentage = scrollPosition / maxScroll; // % du scroll
+
+            // Personnalisation du mouvement vertical (hauteur max de la balle)
+            const maxMovementVertical = 100;  // La balle se déplace sur 500px verticalement
+
+            // Personnalisation du mouvement horizontal (distance horizontale max)
+            const maxMovementHorizontal = 100; // La balle se déplace sur 300px horizontalement
+
+            // Calcul du déplacement diagonal : horizontal (left) et vertical (top)
+            const verticalMovement = percentage * maxMovementVertical; // Déplacement vertical
+            const horizontalMovement = percentage * maxMovementHorizontal; // Déplacement horizontal
+
+            // Appliquer les transformations
+            ball.style.top = `${verticalMovement}px`; // Déplacement vertical
+            ball.style.left = `calc(50% + ${horizontalMovement}px)`; // Déplacement horizontal
+        });
+    </script>
+  
+</body>
+</html>
