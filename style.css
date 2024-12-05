@@ -162,21 +162,12 @@ input[type=number] {
     justify-content: center;
 }
 
-/* Wrapper du slider */
-.review-slider {
-    position: relative;
-    overflow: hidden;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
+#comments {
+    background-image: url('"wp-content/uploads/2024/12/pattern-background.png"') !important;
 }
 
-/* Track du slider */
-.slider-track {
-    display: flex;
-    gap: 20px;
-    transition: transform 0.5s ease;
-    will-change: transform;
+ .avatar {
+    display: none !important;
 }
 
 /* Liste des avis */
@@ -185,50 +176,60 @@ input[type=number] {
     list-style: none;
     margin: 0;
     padding: 0;
+    overflow-x: scroll;
 }
 
 /* Style des avis individuels */
 .commentlist .comment-text {
     flex: 0 0 auto;
-    min-width: 200px;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 20px !important;
     text-align: justify;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #213552;
     color: white;
+    border: #FFD700 solid 2px !important;
+    height: 300px;
+    width: 250px;
+
 }
 
-/* Boutons de navigation du slider */
-.slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #ccc;
-    color: #333;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+.comment-reply-title {
+    font-weight: bold;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    z-index: 1;
 }
 
-.slider-btn:hover {
-    background-color: #bbb;
+/* General container styling for the review form */
+#review_form_wrapper {
+    background-color: #213552;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
-.prev-btn {
-    left: 10px;
+/* Style individual form fields */
+#review_form_wrapper input[type="text"], 
+#review_form_wrapper textarea {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
-.next-btn {
-    right: 10px;
+.woocommerce-review__published-date {
+    color: white;
 }
+
+#review_form_wrapper textarea {
+    width: 100%;
+}
+
+
 
 /* --- Étoiles de notation --- */
 

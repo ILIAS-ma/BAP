@@ -97,41 +97,52 @@ function custom_quantity_buttons_script() {
 }
 add_action('wp_footer', 'custom_quantity_buttons_script');
 
-// Ajouter un slider pour les avis
-function enqueue_review_slider_script() {
-    if (is_product()) {
-        ?>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const track = document.querySelector('.slider-track');
-                const slides = document.querySelectorAll('.review-slide');
-                const prevBtn = document.querySelector('.prev-btn');
-                const nextBtn = document.querySelector('.next-btn');
-                let currentIndex = 0;
 
-                function updateSliderPosition() {
-                    const slideWidth = slides[0].offsetWidth;
-                    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-                }
+add_action('wp_footer', function () {
+    ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const commentField = document.querySelector('#comment'); // Target the comment field
+            const submitButton = document.querySelector('#submit'); // Target the submit button
+            const charLimit = 180; // Set your character limit
 
-                prevBtn.addEventListener('click', function () {
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                        updateSliderPosition();
+            if (commentField) {
+                const charCount = document.createElement('p');
+                charCount.id = 'char-count';
+                charCount.style.fontSize = '0.9em';
+                charCount.style.color = 'white';
+                charCount.textContent = `0/${charLimit} characters`;
+                commentField.parentNode.insertBefore(charCount, commentField.nextSibling);
+
+                // Update character count on input
+                commentField.addEventListener('input', function () {
+                    const length = commentField.value.length;
+                    charCount.textContent = `${length}/${charLimit} characters`;
+
+                    // Disable submit button if over limit
+                    if (length > charLimit) {
+                        charCount.style.color = 'red';
+                        submitButton.disabled = true;
+                    } else {
+                        charCount.style.color = 'white';
+                        submitButton.disabled = false;
                     }
                 });
+            }
+        });
+    </script>
+    <?php
+});
 
-                nextBtn.addEventListener('click', function () {
-                    if (currentIndex < slides.length - 1) {
-                        currentIndex++;
-                        updateSliderPosition();
-                    }
-                });
 
-                window.addEventListener('resize', updateSliderPosition);
-            });
-        </script>
-        <?php
+add_filter('preprocess_comment', function ($commentdata) {
+    $charLimit = 180; // Match the client-side limit
+    if (isset($commentdata['comment_content']) && strlen($commentdata['comment_content']) > $charLimit) {
+        wp_die(
+            'Your comment is too long. Please keep it under ' . $charLimit . ' characters.',
+            'Comment Too Long',
+            ['back_link' => true]
+        );
     }
-}
-add_action('wp_footer', 'enqueue_review_slider_script');
+    return $commentdata;
+});
