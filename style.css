@@ -425,6 +425,7 @@ h3 {
 }
 
 .p_h3 {
+  margin-top: 800px;
   text-align: center;
   font-size: 1.2rem;
   color: var(--text-secondary);
