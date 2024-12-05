@@ -154,28 +154,7 @@
 <p class="p_h3">Bah maintenant, c’est 4 potes qui ont lancé leur aventure autour de Basket Game : le jeu de société dédié au Basketball. Ils sont certains que vous vous amuserez en découvrant un univers super fun ou en profitant de chaque instant pour vous défier autour de votre sport favori. </p>
   
   <script src="./index.js"></script>
-  <script>
-    const ball = document.querySelector('.ball');
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY; // Distance scrollée en pixels
-        const maxScroll = document.body.scrollHeight - window.innerHeight; // Scroll max
-        const percentage = scrollPosition / maxScroll; // % du scroll
 
-        // Personnalisation du mouvement vertical (hauteur max de la balle)
-        const maxMovementVertical = 100;  // La balle se déplace sur 500px verticalement
-
-        // Personnalisation du mouvement horizontal (distance horizontale max)
-        const maxMovementHorizontal = 100; // La balle se déplace sur 300px horizontalement
-
-        // Calcul du déplacement diagonal : horizontal (left) et vertical (top)
-        const verticalMovement = percentage * maxMovementVertical; // Déplacement vertical
-        const horizontalMovement = percentage * maxMovementHorizontal; // Déplacement horizontal
-
-        // Appliquer les transformations
-        ball.style.top = `${verticalMovement}px`; // Déplacement vertical
-        ball.style.left = `calc(50% + ${horizontalMovement}px)`; // Déplacement horizontal
-    });
-</script>
   
 
 
